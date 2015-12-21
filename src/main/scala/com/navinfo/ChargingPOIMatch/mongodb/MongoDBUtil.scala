@@ -1,4 +1,4 @@
-package mongodb
+package com.navinfo.ChargingPOIMatch.mongodb
 
 import com.mongodb.client.result.{DeleteResult, UpdateResult}
 import com.mongodb.client.{FindIterable, MongoCollection, MongoDatabase}
@@ -75,11 +75,11 @@ object MongoDBUtil {
     val result = update(query, updateItem, table)
     
     println(result)
-    println((System.currentTimeMillis() - start).toString())
+    println((System.currentTimeMillis() - start).toString)
     
     val iter = search(query, table).iterator()
     
-    while(iter.hasNext())
+    while(iter.hasNext)
       println(iter.next())
     
 //    val iter = getNearGeo(116.352982,39.89957, 1000, table).iterator()
