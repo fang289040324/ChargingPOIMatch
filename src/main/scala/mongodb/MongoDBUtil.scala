@@ -1,14 +1,8 @@
-package com.navinfo.ChargingPOIMatch.spark
+package mongodb
 
-import com.mongodb.BasicDBObject
-import com.mongodb.MongoClient
-import com.mongodb.MongoClientURI
-import com.mongodb.client.FindIterable
-import com.mongodb.client.MongoCollection
-import com.mongodb.client.MongoDatabase
-import com.mongodb.client.result.DeleteResult
-import com.mongodb.client.result.UpdateResult
-import com.mongodb.BasicDBObjectBuilder
+import com.mongodb.client.result.{DeleteResult, UpdateResult}
+import com.mongodb.client.{FindIterable, MongoCollection, MongoDatabase}
+import com.mongodb.{BasicDBObject, MongoClient, MongoClientURI}
 
 /**
  * @author fangshaowei

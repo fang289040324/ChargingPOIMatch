@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat
 
 import com.alibaba.fastjson.JSON
 import com.mongodb.BasicDBObject
+import mongodb.MongoDBUtil
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.kafka.KafkaUtils
