@@ -1,16 +1,13 @@
 package com.navinfo.ChargingPOIMatch.spark
 
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.Seconds
-import org.apache.spark.streaming.StreamingContext
-import org.apache.spark.streaming.dstream.DStream
-import org.apache.spark.streaming.kafka.KafkaUtils
+import java.text.SimpleDateFormat
+
 import com.alibaba.fastjson.JSON
 import com.mongodb.BasicDBObject
-import java.util.Date
-import java.text.SimpleDateFormat
-import sun.security.util.Length
-import kafka.serializer.StringDecoder
+import org.apache.spark.SparkConf
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.streaming.dstream.DStream
+import org.apache.spark.streaming.kafka.KafkaUtils
 
 /**
  * @author fangshaowei
@@ -46,7 +43,7 @@ class MatchStreaming {
 
   def matchInfo(lines: DStream[String]): Unit = {
     lines.foreachRDD(rdd => {
-      rdd.map(JSON.parseObject(_)).foreach(json => {
+      rdd.map(JSON.parseObject).foreach(json => {
         
         val sdf = new SimpleDateFormat("yyyyMMddhh:mm") // 线程不安全
         val dateSdf = new SimpleDateFormat("yyyyMMdd")
